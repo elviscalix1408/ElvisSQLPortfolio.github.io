@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+
+	
+
+		<title>Elvis' Analysis Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+	
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="generic.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">SQL/ Tableau Projects</a></li>
+							<li class="active"><a href="generic.html">Personal Finances Project</a></li>
+							<li><a href="elements.html"></a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/elviscalixlopez/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/elviscalix1408" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Personal Finances<br />
+									SQL Insights</h1>
+									<p>In this project, I downloaded my cashapp financial statement, dating back
+										to 2020, and drew some insights on my spending: Investigated balance discrepancies, 
+										joined tables and grouped by transaction location, created CTE's to house calculations<br />
+					
+								</header>
+								<div class="image main"><img src="images/cashiappywebby.webp" alt="" /></div>
+								<p>To start off, I downloaded my data from the Cashapp website<br />
+								I cleaned the .CSV file, and divided the data into three speadsheets<br />
+								Below is a diagram to help visualize how I split the data and how it was imported into the PostgreSQL server <br />
+								
+									
+
+									<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2023-12-20T21:42:25.054Z\&quot; agent=\&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\&quot; etag=\&quot;XBv3FGuO0YlvbOmXiLze\&quot; version=\&quot;22.1.11\&quot; type=\&quot;device\&quot;&gt;\n  &lt;diagram name=\&quot;Page-1\&quot; id=\&quot;BY05Q__6Q5-dbOM1uhz0\&quot;&gt;\n    &lt;mxGraphModel dx=\&quot;868\&quot; dy=\&quot;561\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;850\&quot; pageHeight=\&quot;1100\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot; /&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-2\&quot; value=\&quot;transaction_type\&quot; style=\&quot;shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;580\&quot; y=\&quot;230\&quot; width=\&quot;250\&quot; height=\&quot;90\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-3\&quot; value=\&quot;\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-2\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry y=\&quot;30\&quot; width=\&quot;250\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-4\&quot; value=\&quot;PK\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-3\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-5\&quot; value=\&quot;trans_type_id(bigint)\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-3\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;220\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;220\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-6\&quot; value=\&quot;\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-2\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry y=\&quot;60\&quot; width=\&quot;250\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-7\&quot; value=\&quot;\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-6\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-8\&quot; value=\&quot;transaction_type(text)\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-6\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;220\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;220\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-46\&quot; value=\&quot;transaction_details\&quot; style=\&quot;shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;200\&quot; y=\&quot;320\&quot; width=\&quot;270\&quot; height=\&quot;180\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-50\&quot; value=\&quot;\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-46\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry y=\&quot;30\&quot; width=\&quot;270\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-51\&quot; value=\&quot;\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-50\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-52\&quot; value=\&quot;transaction_id(varchar(255))\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-50\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;240\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;240\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-53\&quot; value=\&quot;\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-46\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry y=\&quot;60\&quot; width=\&quot;270\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-54\&quot; value=\&quot;\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-53\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-55\&quot; value=\&quot;add_details(varchar(255))\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-53\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;240\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;240\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-56\&quot; value=\&quot;\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-46\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry y=\&quot;90\&quot; width=\&quot;270\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-57\&quot; value=\&quot;\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-56\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-58\&quot; value=\&quot;name_of_sender(text)\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-56\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;240\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;240\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-59\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-46\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry y=\&quot;120\&quot; width=\&quot;270\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-60\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-59\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-61\&quot; value=\&quot;account_card(varchar(255))\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-59\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;240\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;240\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-63\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-46\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry y=\&quot;150\&quot; width=\&quot;270\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-64\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-63\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-65\&quot; value=\&quot;trans_type_id(bigint)\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-63\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;240\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;240\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-72\&quot; value=\&quot;transaction_history\&quot; style=\&quot;shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;160\&quot; y=\&quot;30\&quot; width=\&quot;180\&quot; height=\&quot;180\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-73\&quot; value=\&quot;\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-72\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry y=\&quot;30\&quot; width=\&quot;180\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-74\&quot; value=\&quot;PK\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-73\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-75\&quot; value=\&quot;transaction_id&amp;lt;br&amp;gt;(varchar(255))\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-73\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;150\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;150\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-76\&quot; value=\&quot;\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-72\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry y=\&quot;60\&quot; width=\&quot;180\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-77\&quot; value=\&quot;\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-76\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-78\&quot; value=\&quot;trans_dt(date)\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-76\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;150\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;150\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-79\&quot; value=\&quot;\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-72\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry y=\&quot;90\&quot; width=\&quot;180\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-80\&quot; value=\&quot;\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-79\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-81\&quot; value=\&quot;gross_amount(numeric)\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-79\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;150\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;150\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-82\&quot; value=\&quot;\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-72\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry y=\&quot;120\&quot; width=\&quot;180\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-83\&quot; value=\&quot;\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-82\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;FluBrfAy0QYLi8yXzGCk-84\&quot; value=\&quot;net_amount(numeric)\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-82\&quot; vertex=\&quot;1\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;150\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;150\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;uTrylvfs7AZBMl5WxcHn-5\&quot; style=\&quot;shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;\&quot; vertex=\&quot;1\&quot; parent=\&quot;FluBrfAy0QYLi8yXzGCk-72\&quot;&gt;\n          &lt;mxGeometry y=\&quot;150\&quot; width=\&quot;180\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot; /&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;uTrylvfs7AZBMl5WxcHn-6\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;uTrylvfs7AZBMl5WxcHn-5\&quot;&gt;\n          &lt;mxGeometry width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;30\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;uTrylvfs7AZBMl5WxcHn-7\&quot; value=\&quot;payment_status(text)\&quot; style=\&quot;shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;\&quot; vertex=\&quot;1\&quot; parent=\&quot;uTrylvfs7AZBMl5WxcHn-5\&quot;&gt;\n          &lt;mxGeometry x=\&quot;30\&quot; width=\&quot;150\&quot; height=\&quot;30\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxRectangle width=\&quot;150\&quot; height=\&quot;30\&quot; as=\&quot;alternateBounds\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;uTrylvfs7AZBMl5WxcHn-8\&quot; value=\&quot;\&quot; style=\&quot;endArrow=none;html=1;rounded=0;entryX=1.011;entryY=0.967;entryDx=0;entryDy=0;entryPerimeter=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; target=\&quot;uTrylvfs7AZBMl5WxcHn-5\&quot;&gt;\n          &lt;mxGeometry width=\&quot;50\&quot; height=\&quot;50\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;342\&quot; y=\&quot;330\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;410\&quot; y=\&quot;220\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\&quot;uTrylvfs7AZBMl5WxcHn-9\&quot; value=\&quot;\&quot; style=\&quot;endArrow=none;html=1;rounded=0;exitX=1.004;exitY=0.2;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;FluBrfAy0QYLi8yXzGCk-53\&quot; target=\&quot;FluBrfAy0QYLi8yXzGCk-2\&quot;&gt;\n          &lt;mxGeometry width=\&quot;50\&quot; height=\&quot;50\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;\n            &lt;mxPoint x=\&quot;400\&quot; y=\&quot;320\&quot; as=\&quot;sourcePoint\&quot; /&gt;\n            &lt;mxPoint x=\&quot;570\&quot; y=\&quot;280\&quot; as=\&quot;targetPoint\&quot; /&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;\n&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+
+<br />
+
+For further clarity, I have added details on what the column/ table names represent:<br />
+<ul>
+			<li>trans_dt = transaction date</li>
+			<li>transaction_type states whether a transaction was a payment made or if it was received</li>
+			<li>add_details gives additional details on the transaction (i.e. location of transaction)</li>
+	</ul>
+									I first noticed that total amount spent was not adding up to the total amount of money I deposited into my account<br />
+									To find out the total amount using the sum function<br />
+									I had to write a sum and case statement to add up each column to a total and to distinguish and sort between the negative and positive numbers under the net_amount column<br />
+									negative numbers represent 'Amount spent' under the amount_paid column and positive numbers represent 'Amount deposited' under the 'amount_received' column<br />
+
+									<br />
+
+									<header>
+										<h3><a >The code:
+										</a></h3> </header>	
+
+
+									<pre><code>
+	select
+		 sum(case when net_amount > 0 then net_amount else 0 end) as amount_received
+		, sum (case when net_amount < 0 then net_amount else 0 end) as amount_paid
+	from
+		transaction_history</code></pre>
+
+		<header>
+			<h3><a >Result Set:
+			</a></h3> </header>	
+		<p>As seen below, the numbers do not match, according to this data I spent more money than I received <br/>
+		I subtracted both numbers (amount_paid - amount_received) 39,326.24 - 36,826.96 = 2499.28 unaccounted for balance<br />	
+		
+		</p>
+	
+									<div class="image main"><img src="images/Screen Shot 2024-04-15 at 10.05.45 PM.png" alt="" /></div>
+									So I decided to investigate by formulating the below script<br />
+									I decided to create a the 'distinct_net_amount' <b>CTE</b> to be able to reference back to it<br />
+									Upon further investigation, I found out all the refunds I received were recorded 3 times
+									
+									<br />
+
+									<ul>
+										<li>Each time I spent a specific amount (1 record) </li>
+										<li>Each time I got it refunded that specific amount (2nd record)</li>
+										<li>Each time I spent the money, across different purchases (not traceable) (3rd record)</li>
+								</ul>
+									<ul>I outline my investigation below:<br />
+									The code below is referencing the <b>CTE</b> where:
+									<li>I have asked it to provide me a column where I can see the distinct count of a specific number in a each category, if they match</li>
+									<li>The case statement separates the postive and negative numbers into their own columns (positive numbers are <i>(amount_recieved)</i>and negative numbers are <i>(amount_paid)</i>)
+									<li>I used the Absolute statement <b>(ABS)</b> to convert the negative values(amount spent)so they could match with the positive numbers column if applicable
+									<li>The statement below the CTE creates two aliases (alias <i>'a'</i> and <i>'b'</i>) to join the same column, net_amount
+									<li>This statment requests that the net_amount category be renamed to 'amount_recieved' and 'amount_paid', both columns stemming from the original 'net_income' column renamed in the CTE </li>
+									<li>Lastly I paired each distinct match from each column</li><br/>
+							
+									
+									<li>The logic behind it would be to match identical net amounts that show up as both received and spent
+									to fix the discrepacy I am facing with the total net negative and net positive amounts not matching
+									<li>I then plan on reviewing the excel spreadsheet to confirm that the numbers are in fact matching and the source of at least one of the values is a refund
+									<li>my goal is to match net negative amount spent to net positive amount received, this will give me insight on what transactions were accounted for at least two times
+									confirming my theory of multiple records of the same money recorded on the spreadsheet</li>
+								</ul>
+
+								</p>
+								<section class="posts">
+
+								</code></pre> 
+								<header>
+								  <h3><a >The code:
+								  </a></h3> </header>	
+<pre>
+	<code>with distinct_net_amount as (
+select
+	distinct count(net_amount) as record_count
+	, sum(case when net_amount > 0 
+	  then net_amount else 0 end) as amount_received
+	, ABS(sum(case when net_amount < 0 
+		 then net_amount else 0 end)) as amount_paid
+from
+	transaction_history
+group by
+	net_amount
+having
+	count(net_amount) = 1)
+
+select
+    a.amount_received as amount_received
+   ,b.amount_paid as amount_paid
+from distinct_net_amount a
+join
+	distinct_net_amount b
+		on a.amount_received = b.amount_paid
+group by
+   a.amount_received
+   , b.amount_paid	</code>
+					</pre>
+				</code></pre> 
+				<header>
+				  <h3><a >Result Set:
+				  </a></h3> </header>	
+
+					<p>The result set below pulled distinct matching numbers from amount_received column to amount_paid column and didn't render any other numbers, since they didn't match<br/>
+						
+					</p>
+					<div class="image main"><img src="images/Screen Shot 2024-04-15 at 8.30.21 PM.png" style="width: 20vw; min-width: 280px;" alt=""/></div>
+									<article>
+
+										<header>
+											<h3><a >Verifying Result set numbers to Excel data:
+											</a></h3> </header>	
+
+			<p>The verification is below, I checked the original Excel spreadsheet to verify the numbers matched the same numbers above and verified the vendors matched as well <br/>
+				This has confirmed my theory of the same value being recorded multiple times<br/>
+				I have provided a couple of examples from the excel spreadsheet, as seen below, that shows data I verified the above numbers with: <br />
+
+				Below, you see a record showing I spent $82.76 on 'Real Mushrooms', counts as one record <br />	</p>
+					<div class="image main"><img src="images/RealMushpaid.png" alt="" /></div>
+				<p>Below shows that I was refuned the same amount, $82.76, from the same vendor, 'Real Mushrooms'<br />
+					This amount of money I had already spent is now being credited back into my account as a refund for me to spend again <br />
+					once that money is spent again <i>(likely not in the same amount, but distributed across different transactions)</i> it creates another record<br />
+					This in turn provides 3 records: Amount spent, Amount refunded, and Amount spent again across different purchases/ items
+				</p>
+					<div class="image main"><img src="images/realmushdebit.png" alt="" /></div>
+					<p>Below is another record of a transaction at 'Uber Eats'for $31.59, this is amount I spent for food I paid for <br />
+						
+					</p>
+					<div class="image main"><img src="images/Ubereatspaid.png"  alt="" /></div>
+					<p>And here is the same amount,$31.59, previoulsy credited back to my account as a refund from the same vendor 'Uber Eats' <br />
+						This same amount of money will now be spent likely in different amounts in one or more purchases, counting as the 3rd record
+						
+					</p>
+					
+					<div class="image main"><img src="images/UberEatsDebit.png"  alt="" /></div>
+					<header>
+						<h3><a >SQL code: Total sum of each column
+						</a></h3> </header>	
+					<p>The below code is reusing the CTE but instead grouping each matching number from each column, it sums up each column <i>(amount_paid and amount_received columns) </i> to total amounts <br />
+						</p>
+
+							<pre>
+<code>with distinct_net_amount as (
+select
+	distinct count(net_amount) as record_count
+	, sum(case when net_amount > 0 
+	  then net_amount else 0 end) as amount_received
+	, ABS(sum(case when net_amount < 0 
+		 then net_amount else 0 end)) as amount_paid
+from
+	transaction_history
+group by
+	net_amount
+having
+	count(net_amount) = 1)
+
+select
+    sum(a.amount_received) as amount_received
+   ,sum(b.amount_paid) as amount_paid
+from 
+	distinct_net_amount a
+join
+	distinct_net_amount b
+		on a.amount_received = b.amount_paid
+
+	
+
+  	</code></pre> 
+	  <header>
+		<h3><a >Result Set:
+		</a></h3> </header>							
+								<p>The result set below shows the numbers total in each each column <i>(amount_paid = 1264.18, and amount_received = 1264.18)</i> match<br />
+															</p>
+									
+
+								
+						<div class="image main"><img src="images/Screen Shot 2024-04-17 at 11.01.40 PM.png"  alt="" /></div>
+						<p>
+							The next step into reducing the unaccounted balance ($2499.28) was to double the amount_paid category, since we now know that the amount I initially paid was refunded, and recorded a second time as spent, doubling that number makes sense <i>(1264.18 X 2 = <b>2528.36</b>)</i><br />
+							$2528.36 does not match the discrepancy of 2499.28 discrepancy, but lets subtract the number to figure out the new unaccounted balance, 2528.36 - 2499.28 = <b>29.08</b> (new unaccounted for balance), this reduced number is better but I still have to investigate an unaccounted for balance
+													</p>
+
+													<header>
+														<h3><a >In Conclusion
+														</a></h3>
+													</header>
+
+
+							<p>Upon further investigation, I concluded that the data in my spreadsheet, while mostly accurate, had at least 3 records missing<br />
+								When viewing my account statement on the Cashapp website it shows every transaction in my account, but I noticed when I export the report to excel, some records unfortunately were excluded
+													</p>
+
+							<p>I had different plans for this data, but this project also allowed me to formulate statmenents and use my critical thinking skills to solve a discrepancy <I>(unplanned)</I>, and it also pushed me to get creative in SQL to solve the issue at hand <br />
+								This project encouraged me to think about data integrity and the importance of it, renewing an appreciation into the field of Data Analytics, Data Science and especially Data Engineering
+																			</p>
+															<article>
+										
+										<section class="posts">
+											<article>
+												<header>
+													<h2><a href="https://github.com/elviscalix1408/Bank_Statement_SQL_Project/blob/main/Bank_statement_SQL.sql">Project code<br />
+													including comments</a></h2>
+												</header>
+												<a href="https://github.com/elviscalix1408/Bank_Statement_SQL_Project/blob/main/Bank_statement_SQL.sql" class="image fit" ><img src="images/SQL_code_data.jpeg" alt="" /></a>
+												<p>This code walks you through my thought process on solving a data discrepancy with SQL in the SQL server</p>
+												<ul class="actions special">
+													<li><a href="https://github.com/elviscalix1408/Bank_Statement_SQL_Project/blob/main/Bank_statement_SQL.sql" class="button">view github code</a></li>
+												</ul>
+											</article>
+											
+											
+										</section>
+							
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+
+							
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>New York, New York<br />
+							</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">elviscalix1408@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/elviscalixlopez/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/elviscalix1408" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+
+			
+
+	</body>
+</html>
